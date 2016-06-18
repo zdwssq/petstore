@@ -34,6 +34,7 @@
                 <when>
                     <!-- 执行带模板的screen，默认有layout。 -->
                     <pl-conditions:target-extension-condition extension="null" />
+                    <!--  -->
                     <pl-valves:performAction />
                     <pl-valves:performTemplateScreen />
                     <pl-valves:renderTemplate />

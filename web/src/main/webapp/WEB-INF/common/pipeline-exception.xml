@@ -6,12 +6,15 @@
              xmlns:pl-conditions="http://www.alibaba.com/schema/services/pipeline/conditions"
              xmlns:pl-valves="http://www.alibaba.com/schema/services/pipeline/valves"
              xsi:schemaLocation="
-                 http://www.alibaba.com/schema/services http://localhost:8080/schema/services.xsd
-                 http://www.alibaba.com/schema/services/pipeline/conditions http://localhost:8080/schema/services-pipeline-conditions.xsd
-                 http://www.alibaba.com/schema/services/pipeline/valves http://localhost:8080/schema/services-pipeline-valves.xsd
-                 http://www.springframework.org/schema/beans http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd
-             ">
-
+                 http://www.alibaba.com/schema/services 
+                 http://localhost:8080/schema/services.xsd
+                 http://www.alibaba.com/schema/services/pipeline/conditions 
+                 http://localhost:8080/schema/services-pipeline-conditions.xsd
+                 http://www.alibaba.com/schema/services/pipeline/valves 
+                 http://localhost:8080/schema/services-pipeline-valves.xsd
+                 http://www.springframework.org/schema/beans 
+                 http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- pipeline类似于Filter，用于控制请求的流向，但是不能改变request和resposne -->
     <services:pipeline id="exceptionPipeline">
 
         <!-- 初始化turbine rundata，并在pipelineContext中设置可能会用到的对象(如rundata、utils)，以便valve取得。 -->

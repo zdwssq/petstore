@@ -1,115 +1,139 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns:beans="http://www.springframework.org/schema/beans"
-             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xmlns:p="http://www.springframework.org/schema/p"
-             xmlns:services="http://www.alibaba.com/schema/services"
-             xmlns:ml-adapters="http://www.alibaba.com/schema/services/module-loader/adapters"
-             xmlns:ml-factories="http://www.alibaba.com/schema/services/module-loader/factories"
-             xmlns:pull-factories="http://www.alibaba.com/schema/services/pull/factories"
-             xmlns:request-contexts="http://www.alibaba.com/schema/services/request-contexts"
-             xmlns:basic-interceptors="http://www.alibaba.com/schema/services/request-contexts/basic/interceptors"
-             xmlns:parser-filters="http://www.alibaba.com/schema/services/request-contexts/parser/filters"
-             xmlns:session-encoders="http://www.alibaba.com/schema/services/request-contexts/session/encoders"
-             xmlns:session-idgens="http://www.alibaba.com/schema/services/request-contexts/session/idgens"
-             xmlns:session-interceptors="http://www.alibaba.com/schema/services/request-contexts/session/interceptors"
-             xmlns:model-encoders="http://www.alibaba.com/schema/services/request-contexts/session/model-encoders"
-             xmlns:session-stores="http://www.alibaba.com/schema/services/request-contexts/session/stores"
-             xsi:schemaLocation="
-                 http://www.alibaba.com/schema/services http://localhost:8080/schema/services.xsd
-                 http://www.alibaba.com/schema/services/module-loader/adapters http://localhost:8080/schema/services-module-loader-adapters.xsd
-                 http://www.alibaba.com/schema/services/module-loader/factories http://localhost:8080/schema/services-module-loader-factories.xsd
-                 http://www.alibaba.com/schema/services/pull/factories http://localhost:8080/schema/services-pull-factories.xsd
-                 http://www.alibaba.com/schema/services/request-contexts http://localhost:8080/schema/services-request-contexts.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/basic/interceptors http://localhost:8080/schema/services-request-contexts-basic-interceptors.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/parser/filters http://localhost:8080/schema/services-request-contexts-parser-filters.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/session/encoders http://localhost:8080/schema/services-request-contexts-session-encoders.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/session/idgens http://localhost:8080/schema/services-request-contexts-session-idgens.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/session/interceptors http://localhost:8080/schema/services-request-contexts-session-interceptors.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/session/model-encoders http://localhost:8080/schema/services-request-contexts-session-model-encoders.xsd
-                 http://www.alibaba.com/schema/services/request-contexts/session/stores http://localhost:8080/schema/services-request-contexts-session-stores.xsd
-                 http://www.springframework.org/schema/beans http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd
-             ">
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:services="http://www.alibaba.com/schema/services"
+	xmlns:ml-adapters="http://www.alibaba.com/schema/services/module-loader/adapters"
+	xmlns:ml-factories="http://www.alibaba.com/schema/services/module-loader/factories"
+	xmlns:pull-factories="http://www.alibaba.com/schema/services/pull/factories"
+	xmlns:request-contexts="http://www.alibaba.com/schema/services/request-contexts"
+	xmlns:basic-interceptors="http://www.alibaba.com/schema/services/request-contexts/basic/interceptors"
+	xmlns:parser-filters="http://www.alibaba.com/schema/services/request-contexts/parser/filters"
+	xmlns:session-encoders="http://www.alibaba.com/schema/services/request-contexts/session/encoders"
+	xmlns:session-idgens="http://www.alibaba.com/schema/services/request-contexts/session/idgens"
+	xmlns:session-interceptors="http://www.alibaba.com/schema/services/request-contexts/session/interceptors"
+	xmlns:model-encoders="http://www.alibaba.com/schema/services/request-contexts/session/model-encoders"
+	xmlns:session-stores="http://www.alibaba.com/schema/services/request-contexts/session/stores"
+	xsi:schemaLocation="
+                 http://www.alibaba.com/schema/services 
+                 http://localhost:8080/schema/services.xsd
+                 http://www.alibaba.com/schema/services/module-loader/adapters 
+                 http://localhost:8080/schema/services-module-loader-adapters.xsd
+                 http://www.alibaba.com/schema/services/module-loader/factories 
+                 http://localhost:8080/schema/services-module-loader-factories.xsd
+                 http://www.alibaba.com/schema/services/pull/factories 
+                 http://localhost:8080/schema/services-pull-factories.xsd
+                 http://www.alibaba.com/schema/services/request-contexts 
+                 http://localhost:8080/schema/services-request-contexts.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/basic/interceptors 
+                 http://localhost:8080/schema/services-request-contexts-basic-interceptors.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/parser/filters 
+                 http://localhost:8080/schema/services-request-contexts-parser-filters.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/session/encoders 
+                 http://localhost:8080/schema/services-request-contexts-session-encoders.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/session/idgens 
+                 http://localhost:8080/schema/services-request-contexts-session-idgens.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/session/interceptors 
+                 http://localhost:8080/schema/services-request-contexts-session-interceptors.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/session/model-encoders 
+                 http://localhost:8080/schema/services-request-contexts-session-model-encoders.xsd
+                 http://www.alibaba.com/schema/services/request-contexts/session/stores 
+                 http://localhost:8080/schema/services-request-contexts-session-stores.xsd
+                 http://www.springframework.org/schema/beans 
+                 http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- 支持${xxx}替换。 -->
-    <services:property-placeholder>
-        <property key="component">common</property>
-    </services:property-placeholder>
+	<!-- 配置placeholder服务，支持${xxx}替换。 -->
+	<services:property-placeholder>
+		<property key="component">common</property>
+	</services:property-placeholder>
 
-    <!-- 共享配置。 -->
-    <beans:import resource="common/webx-component-and-root.xml" />
+	<!-- 共享配置。 -->
+	<beans:import resource="common/webx-component-and-root.xml" />
 
-    <!-- 异常管道。 -->
-    <beans:import resource="common/pipeline-exception.xml" />
+	<!-- 异常管道。 -->
+	<beans:import resource="common/pipeline-exception.xml" />
 
-    <!-- 资源装载。 -->
-    <beans:import resource="common/resources.xml" />
+	<!-- 资源装载。 -->
+	<beans:import resource="common/resources.xml" />
 
-    <!-- URI生成。 -->
-    <beans:import resource="common/uris.xml" />
+	<!-- URI生成。 -->
+	<beans:import resource="common/uris.xml" />
 
-    <!-- 模板所需要的数据。 -->
-    <beans:import resource="common/template-data.xml" />
+	<!-- 模板所需要的数据。 -->
+	<beans:import resource="common/template-data.xml" />
 
-    <!-- Dal/biz配置。 -->
-    <beans:import resource="classpath:petstore/dal/data-source.xml" />
-    <beans:import resource="classpath:petstore/dal/dao.xml" />
-    <beans:import resource="classpath:petstore/biz/manager.xml" />
+	<!-- Dal/biz配置。 -->
+	<beans:import resource="classpath:petstore/dal/data-source.xml" />
+	<beans:import resource="classpath:petstore/dal/dao.xml" />
+	<beans:import resource="classpath:petstore/biz/manager.xml" />
 
-    <!-- 综合设置。 -->
-    <services:webx-configuration>
-        <!-- 默认将productionMode设为true，建议在jetty插件中设置-DproductionMode=false。 -->
-        <productionMode>${productionMode:true}</productionMode>
-        <components defaultComponent="home" />
-    </services:webx-configuration>
+	<!-- 综合设置。用于切换生产模式和开发模式 -->
+	<services:webx-configuration>
+		<!-- 默认将productionMode设为true，建议在jetty插件中设置-DproductionMode=false。 -->
+		<productionMode>${productionMode:true}</productionMode>
+		<components defaultComponent="home" />
+	</services:webx-configuration>
 
-    <!-- 设置request/response/session。 -->
-    <services:request-contexts>
-        <request-contexts:basic />
-        <request-contexts:buffered />
-        <request-contexts:lazy-commit />
-        <request-contexts:parser>
-            <filters>
-                <parser-filters:uploaded-file-whitelist extensions="jpg, gif, png" />
-            </filters>
-        </request-contexts:parser>
-        <request-contexts:set-locale defaultLocale="zh_CN" defaultCharset="UTF-8" />
-        <request-contexts:session forceExpirationPeriod="14400">
-            <stores>
-                <session-stores:cookie-store id="temporaryCookie">
-                    <cookie name="tmp" />
-                </session-stores:cookie-store>
-            </stores>
-            <store-mappings>
-                <match name="*" store="temporaryCookie" />
-            </store-mappings>
-            <interceptors>
-                <session-interceptors:lifecycle-logger />
-                <session-interceptors:attribute-whitelist>
-                    <attribute name="_csrf_token" />
-                    <attribute name="_lang" />
-                    <attribute name="petstoreUser" type="com.alibaba.sample.petstore.web.common.PetstoreUser" />
-                    <attribute name="petstoreCart" type="com.alibaba.sample.petstore.dal.dataobject.Cart" />
-                </session-interceptors:attribute-whitelist>
-            </interceptors>
-        </request-contexts:session>
-    </services:request-contexts>
+	<!-- 配置增强request、response、session增强服务， 设置request/response/session。将他们打包成更容易使用的RequestCotnext 
+		用于访问和修改request和response，不会改变应用执行的流程 -->
+	<services:request-contexts>
+		<!-- 对输入输出的数据进行安全检查，排除可能的攻击。 -->
+		<request-contexts:basic />
+		<!--对response中的数据进行缓存，以便于实现嵌套的页面 -->
+		<request-contexts:buffered />
+		<!-- 延迟提交response，用来支持基于cookie的session -->
+		<request-contexts:lazy-commit />
+		<!-- 解析用户提交的参数，包括上传文件的请求 -->
+		<request-contexts:parser>
+			<filters>
+				<parser-filters:uploaded-file-whitelist
+					extensions="jpg, gif, png" />
+			</filters>
+		</request-contexts:parser>
+		<!-- 设置当前请求的区域、字符编码集 -->
+		<request-contexts:set-locale
+			defaultLocale="zh_CN" defaultCharset="UTF-8" />
+		<!-- 增强的session框架，可将session中的对象保存到cookie、数据库等中，这里设置的是保存在cookie中 -->
+		<request-contexts:session
+			forceExpirationPeriod="14400">
+			<stores>
+				<session-stores:cookie-store id="temporaryCookie">
+					<cookie name="tmp" />
+				</session-stores:cookie-store>
+			</stores>
+			<store-mappings>
+				<match name="*" store="temporaryCookie" />
+			</store-mappings>
+			<interceptors>
+				<session-interceptors:lifecycle-logger />
+				<session-interceptors:attribute-whitelist>
+					<attribute name="_csrf_token" />
+					<attribute name="_lang" />
+					<attribute name="petstoreUser"
+						type="com.alibaba.sample.petstore.web.common.PetstoreUser" />
+					<attribute name="petstoreCart"
+						type="com.alibaba.sample.petstore.dal.dataobject.Cart" />
+				</session-interceptors:attribute-whitelist>
+			</interceptors>
+		</request-contexts:session>
+	</services:request-contexts>
 
-    <!-- 支持上传文件。 -->
-    <services:upload sizeMax="5M" />
+	<!-- 支持上传文件。 -->
+	<services:upload sizeMax="5M" />
 
-    <!-- 将beans暴露给模板。这里定义的tools可被所有components之间共享。 -->
-    <services:pull>
-        <pull-factories:utils />
-        <pull-factories:page-tool />
-        <pull-factories:control-tool />
-        <pull-factories:uris-tool />
-    </services:pull>
+	<!-- 将beans暴露给模板。这里定义的tools可被所有components之间共享。 -->
+	<services:pull>
+		<pull-factories:utils />
+		<pull-factories:page-tool />
+		<pull-factories:control-tool />
+		<pull-factories:uris-tool />
+	</services:pull>
 
-    <!-- 装载模块。 -->
-    <services:module-loader>
-        <ml-factories:class-modules>
-            <search-packages type="$1" packages="com.alibaba.sample.petstore.web.common.module.*" />
-        </ml-factories:class-modules>
-    </services:module-loader>
+	<!-- 装载模块。 -->
+	<services:module-loader>
+		<ml-factories:class-modules>
+			<search-packages type="$1"
+				packages="com.alibaba.sample.petstore.web.common.module.*" />
+		</ml-factories:class-modules>
+	</services:module-loader>
 
 </beans:beans>

@@ -16,14 +16,14 @@
 		<param-value>UTF-8</param-value>
 	</context-param>
 
-	<!-- 根据当前依赖的日志系统选择合适的配置文件，如果当前的日志系统是log4j，则会选择~/WEB-INF/log4j.xml做为日志配置文件。
-	读取以log开头的context-param
-	LogConfiguratorListener还会对配置文件中的placeholder进行替换 -->
+	<!-- 根据当前依赖的日志系统选择合适的配置文件，如果当前的日志系统是log4j，则会选择~/WEB-INF/log4j.xml做为日志配置文件。 判断的依据是依赖的jar包
+		读取以log开头的context-param LogConfiguratorListener支持对配置文件中的placeholder进行替换 -->
 	<listener>
 		<listener-class>com.alibaba.citrus.logconfig.LogConfiguratorListener</listener-class>
 	</listener>
 
-	<!-- 装载/WEB-INF/webx.xml, /WEB-INF/webx-*.xml -->
+	<!-- web程序启动的时候装载/WEB-INF/webx.xml, /WEB-INF/webx-*.xml。会根据不同的配置文件创建级联形式的spring容器，
+	webx.xml创建的是跟容器。webx-*.xml创建的是子容器，两个子容器之间的bean无法相互注入，根容器中的bean可以被注入到子容器的bean中，反之不行 -->
 	<listener>
 		<listener-class>com.alibaba.citrus.webx.context.WebxContextLoaderListener</listener-class>
 	</listener>
@@ -33,16 +33,17 @@
 		<filter-class>com.alibaba.citrus.webx.servlet.SetLoggingContextFilter</filter-class>
 	</filter>
 
+	<!-- 当一个请求到达时，首先由WebxframeworkFilter开始处理，承担控制器的角色，相当于DispatcherServlet 对于一个被passthru的请求，webx的行为更像是一个普通的filter。而“排除”则不同，如果一个请求被“排除”，webx将会立即放弃控制，将请求交还给服务器 -->
 	<filter>
 		<filter-name>webx</filter-name>
 		<filter-class>com.alibaba.citrus.webx.servlet.WebxFrameworkFilter</filter-class>
 		<init-param>
-			<!-- - 需要被“排除”的URL路径，以逗号分隔，如/static, *.jpg。适合于映射静态页面、图片。 - 此处将所有静态html、图片文件交给servlet引擎直接处理；但/petstore/images下的图片仍由pipeline来处理。 -->
+			<!-- - 需要被“排除”的URL路径，以逗号分隔，如/static, *.jpg。适合于映射静态页面、图片。不处理这里的请求 此处将所有静态html、图片文件交给servlet引擎直接处理；但/petstore/images下的图片仍由pipeline来处理。 -->
 			<param-name>excludes</param-name>
 			<param-value>*.html, *.jpg, *.gif, *.png, !/petstore/images</param-value>
 		</init-param>
 		<init-param>
-			<!-- - 需要被“略过”的URL路径，以逗号分隔，如/myservlet, *.jsp。适用于映射servlet、filter。 - 对于passthru请求，webx的request-contexts服务、错误处理、开发模式等服务仍然可用。 
+			<!-- - 需要被“略过”的URL路径，以逗号分隔，如/myservlet, *.jsp。适用于映射servlet、filter。 对于passthru请求，webx的request-contexts服务、错误处理、开发模式等服务仍然可用。 
 				- 此处，/getloginuser是一个servlet，但通过passthru，这个servlet可以享用webx所提供的服务。 -->
 			<param-name>passthru</param-name>
 			<param-value>/getloginuser</param-value>

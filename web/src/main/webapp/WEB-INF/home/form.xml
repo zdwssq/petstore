@@ -6,12 +6,16 @@
              xmlns:fm-conditions="http://www.alibaba.com/schema/services/form/conditions"
              xmlns:fm-validators="http://www.alibaba.com/schema/services/form/validators"
              xsi:schemaLocation="
-                 http://www.alibaba.com/schema/services http://localhost:8080/schema/services.xsd
-                 http://www.alibaba.com/schema/services/form/conditions http://localhost:8080/schema/services-form-conditions.xsd
-                 http://www.alibaba.com/schema/services/form/validators http://localhost:8080/schema/services-form-validators.xsd
-                 http://www.springframework.org/schema/beans http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd
-             ">
+                 http://www.alibaba.com/schema/services 
+                 http://localhost:8080/schema/services.xsd
+                 http://www.alibaba.com/schema/services/form/conditions 
+                 http://localhost:8080/schema/services-form-conditions.xsd
+                 http://www.alibaba.com/schema/services/form/validators 
+                 http://localhost:8080/schema/services-form-validators.xsd
+                 http://www.springframework.org/schema/beans 
+                 http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 表单验证服务 -->
     <services:form>
         <!--
           - ===============================================

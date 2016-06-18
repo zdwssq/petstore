@@ -7,11 +7,15 @@
              xmlns:res-loaders="http://www.alibaba.com/schema/services/resource-loading/loaders"
              xsi:schemaLocation="
                  http://www.alibaba.com/schema/services http://localhost:8080/schema/services.xsd
-                 http://www.alibaba.com/schema/services/resource-loading/filters http://localhost:8080/schema/services-resource-loading-filters.xsd
-                 http://www.alibaba.com/schema/services/resource-loading/loaders http://localhost:8080/schema/services-resource-loading-loaders.xsd
-                 http://www.springframework.org/schema/beans http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd
-             ">
+                 http://www.alibaba.com/schema/services/resource-loading/filters 
+                 http://localhost:8080/schema/services-resource-loading-filters.xsd
+                 http://www.alibaba.com/schema/services/resource-loading/loaders 
+                 http://localhost:8080/schema/services-resource-loading-loaders.xsd
+                 http://www.springframework.org/schema/beans 
+                 http://localhost:8080/schema/www.springframework.org/schema/beans/spring-beans.xsd">
 
+	<!-- 配置资源加载服务，是Spring ResourceLoader机制的替代品，当不使用它时，spring原来的资源加载服务并不受影响
+	当使用Resource Loading服务的时候，可以自动进行切换，Resource loading支持更多的资源加载功能，包括：资源重命名、资源重定向等 -->
     <services:resource-loading>
 
         <resource-alias pattern="/" name="/webroot" />
