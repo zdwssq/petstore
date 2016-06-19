@@ -42,6 +42,6 @@
     <td colspan="3" valign="top">$control.setTemplate("bottom")</td>
   </tr>
 </table>
-
+<p>我是default.vm</p>
 </body>
 </html>
