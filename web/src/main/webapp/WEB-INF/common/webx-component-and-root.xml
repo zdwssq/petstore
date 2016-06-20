@@ -20,7 +20,7 @@
 
     <!-- 此文件被 webx.xml 和 webx-*.xml 同时引用。 -->
     <!-- 注意：此文件需要property-placeholder变量：${component}。 -->
-
+	<!-- 这个配置文件定义了页面渲染的相关功能以及对URL后缀的映射，这里的配置是去掉URL的后缀，当一个请求到达时，会先根据这个配置对URL进行处理 -->
     <!-- Template渲染服务。 -->
     <services:template searchExtensions="true">
         <tpl-engines:velocity-engine templateEncoding="UTF-8" strictReference="false" path="/${component}/templates">
@@ -42,7 +42,7 @@
         <tpl-engines:jsp-engine path="/${component}/templates" />
     </services:template>
 
-    <!-- 名称查找规则。 -->
+    <!-- 名称查找规则。去掉URL的后缀 -->
     <services:mapping-rules>
 
         <!-- External target name => Internal target name -->

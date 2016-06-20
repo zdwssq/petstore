@@ -21,7 +21,7 @@
     <beans:import resource="common/webx-component-and-root.xml" />
     <beans:import resource="common/webx-component.xml" />
 
-    <!-- 执行管道。 -->
+    <!-- 执行管道。每个组件都可以指定自己的执行管道，也可以执行同一个管道 -->
     <beans:import resource="common/pipeline.xml" />
 
     <!-- 表单验证。 -->
